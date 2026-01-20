@@ -38,29 +38,22 @@
 //     </html>
 //   );
 // }
-import type { Metadata } from "next";
+// app/layout.tsx
+import { Montserrat } from "next/font/google";
 import "./globals.css";
 
-export const metadata: Metadata = {
-  title: "Portfolio Angelo ANR",
-  description: "Portfolio développeur web et automatisation",
-};
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  weight: ["400","500","700","900"],
+  variable: "--font-montserrat",
+});
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="fr">
-      <head>
-        {/* Montserrat CDN */}
-        <link
-          href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&display=swap"
-          rel="stylesheet"
-        />
-      </head>
-      <body className="font-sans antialiased">{children}</body>
+      <body className={`${montserrat.variable} font-sans antialiased`}>
+        {children}
+      </body>
     </html>
   );
 }

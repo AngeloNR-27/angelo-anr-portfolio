@@ -33,7 +33,7 @@ export default function Home() {
                 className="relative group hover:text-gray-900 dark:hover:text-white transition"
               >
                 {item}
-                <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-primary transition-all group-hover:w-full"></span>
+                <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-[#213BF6] transition-all group-hover:w-full"></span>
               </a>
             ))}
           </nav>
@@ -73,17 +73,20 @@ export default function Home() {
         <div className="absolute -top-20 -left-16 w-80 h-80 bg-[#213BF6]/30 rounded-full filter blur-3xl animate-blob"></div>
         <div className="absolute -bottom-32 -right-16 w-80 h-80 bg-[#213BF6]/30 rounded-full filter blur-3xl animate-blob animation-delay-2000"></div>
 
-        <h1 className="text-5xl md:text-6xl font-extrabold text-gray-900 dark:text-white mb-6 drop-shadow-lg animate-fadeUp">
-          Bonjour, je suis{" "}
-          <span className="text-[#213BF6]">Angelo</span>
+        {/* Hero Text */}
+        <h1 className="font-extrabold text-gray-900 dark:text-white mb-6 drop-shadow-lg animate-fadeUp"
+            style={{ fontSize: "clamp(2.5rem, 5vw, 5rem)" }}>
+          Bonjour, je suis <span className="text-[#213BF6]">Angelo</span>
         </h1>
 
-        <p className="text-gray-700 dark:text-gray-300 text-lg md:text-xl mb-10 max-w-2xl leading-relaxed animate-fadeUp animate-delay-100">
+        <p className="text-gray-700 dark:text-gray-300 mb-10 max-w-2xl leading-relaxed animate-fadeUp animate-delay-100"
+           style={{ fontSize: "clamp(1rem, 2.5vw, 1.5rem)" }}>
           Je développe des solutions web et des automatisations pour{" "}
           <span className="font-semibold text-[#213BF6]">gagner du temps</span> et
           optimiser les processus des entreprises.
         </p>
 
+        {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 animate-fadeUp animate-delay-200">
           <a
             href="#projects"
