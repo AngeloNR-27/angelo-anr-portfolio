@@ -1,4 +1,4 @@
-"use client"; 
+"use client";
 
 import { useState } from "react";
 
@@ -6,37 +6,60 @@ export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <main className="min-h-screen bg-gray-50 flex flex-col">
+    <main className="min-h-screen bg-gray-50 dark:bg-gray-900 font-sans flex flex-col overflow-x-hidden">
       {/* Header / Navbar */}
-      <header className="fixed top-0 left-0 w-full bg-white shadow-md z-50">
+      <header className="fixed top-0 left-0 w-full bg-white/70 dark:bg-gray-800/70 backdrop-blur-md shadow-md z-50 transition-colors">
         <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-          {/* Logo / Nom */}
-          <h1 className="text-xl font-bold text-gray-800">Angelo ANR</h1>
+          {/* Logo */}
+          <div>
+            <img
+              src="/logo-dark.png"
+              alt="Logo Angelo ANR"
+              className="block dark:hidden h-12"
+            />
+            <img
+              src="/logo-light.png"
+              alt="Logo Angelo ANR"
+              className="hidden dark:block h-12"
+            />
+          </div>
 
-          {/* Menu desktop */}
-          <nav className="hidden md:flex space-x-6 text-gray-700 font-medium">
-            <a href="#home" className="hover:text-gray-900">Accueil</a>
-            <a href="#about" className="hover:text-gray-900">À propos</a>
-            <a href="#projects" className="hover:text-gray-900">Projets</a>
-            <a href="#contact" className="hover:text-gray-900">Contact</a>
+          {/* Desktop Menu */}
+          <nav className="hidden md:flex space-x-6 text-gray-700 dark:text-gray-200 font-medium">
+            {["Accueil", "À propos", "Projets", "Contact"].map((item) => (
+              <a
+                key={item}
+                href={`#${item.toLowerCase().replace(" ", "")}`}
+                className="relative group hover:text-gray-900 dark:hover:text-white transition"
+              >
+                {item}
+                <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-primary transition-all group-hover:w-full"></span>
+              </a>
+            ))}
           </nav>
 
-          {/* Menu mobile */}
+          {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-gray-700"
+            className="md:hidden text-gray-700 dark:text-gray-200 text-2xl"
             onClick={() => setMenuOpen(!menuOpen)}
           >
             {menuOpen ? "✖" : "☰"}
           </button>
         </div>
 
-        {/* Menu mobile dropdown */}
+        {/* Mobile Menu */}
         {menuOpen && (
-          <nav className="md:hidden bg-white shadow-md flex flex-col space-y-2 px-6 py-4">
-            <a href="#home" className="hover:text-gray-900">Accueil</a>
-            <a href="#about" className="hover:text-gray-900">À propos</a>
-            <a href="#projects" className="hover:text-gray-900">Projets</a>
-            <a href="#contact" className="hover:text-gray-900">Contact</a>
+          <nav className="md:hidden bg-white/95 dark:bg-gray-800/95 backdrop-blur-md shadow-md flex flex-col space-y-2 px-6 py-4 animate-slideDown">
+            {["Accueil", "À propos", "Projets", "Contact"].map((item) => (
+              <a
+                key={item}
+                href={`#${item.toLowerCase().replace(" ", "")}`}
+                className="hover:text-gray-900 dark:hover:text-white transition"
+                onClick={() => setMenuOpen(false)}
+              >
+                {item}
+              </a>
+            ))}
           </nav>
         )}
       </header>
@@ -44,20 +67,37 @@ export default function Home() {
       {/* Hero Section */}
       <section
         id="home"
-        className="flex-1 flex flex-col justify-center items-center text-center px-6 md:px-0 mt-24"
+        className="relative flex flex-col justify-center items-center text-center px-6 md:px-0 min-h-[100vh] bg-gradient-to-b from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 overflow-hidden"
       >
-        <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-          Bonjour, je suis Angelo 
-        </h2>
-        <p className="text-gray-700 text-lg md:text-xl mb-8 max-w-xl">
-          “Je développe des solutions web et des automatisations pour résoudre des problèmes business.”
+        {/* Blobs animés */}
+        <div className="absolute -top-20 -left-16 w-80 h-80 bg-[#213BF6]/30 rounded-full filter blur-3xl animate-blob"></div>
+        <div className="absolute -bottom-32 -right-16 w-80 h-80 bg-[#213BF6]/30 rounded-full filter blur-3xl animate-blob animation-delay-2000"></div>
+
+        <h1 className="text-5xl md:text-6xl font-extrabold text-gray-900 dark:text-white mb-6 drop-shadow-lg animate-fadeUp">
+          Bonjour, je suis{" "}
+          <span className="text-[#213BF6]">Angelo</span>
+        </h1>
+
+        <p className="text-gray-700 dark:text-gray-300 text-lg md:text-xl mb-10 max-w-2xl leading-relaxed animate-fadeUp animate-delay-100">
+          Je développe des solutions web et des automatisations pour{" "}
+          <span className="font-semibold text-[#213BF6]">gagner du temps</span> et
+          optimiser les processus des entreprises.
         </p>
-        <a
-          href="#projects"
-          className="bg-gray-900 text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-800 transition"
-        >
-          Voir mes projets
-        </a>
+
+        <div className="flex flex-col sm:flex-row gap-4 animate-fadeUp animate-delay-200">
+          <a
+            href="#projects"
+            className="bg-[#213BF6] text-white dark:bg-[#213BF6] dark:text-gray-900 px-8 py-4 rounded-lg font-semibold hover:scale-105 hover:shadow-lg transition transform"
+          >
+            Voir mes projets
+          </a>
+          <a
+            href="#contact"
+            className="border border-[#213BF6] text-[#213BF6] dark:border-[#213BF6] dark:text-[#213BF6] px-8 py-4 rounded-lg font-semibold hover:bg-[#213BF6]/10 dark:hover:bg-[#213BF6]/20 hover:scale-105 transition transform"
+          >
+            Me contacter
+          </a>
+        </div>
       </section>
     </main>
   );
