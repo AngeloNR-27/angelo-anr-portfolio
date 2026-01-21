@@ -369,7 +369,7 @@ const staggerContainer: Variants = {
               m'envoyer un email
             </a>
             <a 
-              href="www.linkedin.com/in/angelo-rabetsimba-079ba427b" 
+              href="https://www.linkedin.com/in/angelo-rabetsimba-079ba427b/" 
               target="_blank"
               className="flex items-center justify-center gap-2 border border-white/30 bg-white/10 text-white px-8 py-4 rounded-xl font-bold hover:bg-white/20 transition backdrop-blur-sm"
             >
