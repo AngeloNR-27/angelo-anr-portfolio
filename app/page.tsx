@@ -336,7 +336,7 @@ const staggerContainer: Variants = {
           </div>
           
           <div className="text-center mt-12">
-            <a href="https://github.com" target="_blank" className="inline-flex items-center gap-2 text-[#213BF6] font-semibold hover:underline">
+            <a href="https://github.com/AngeloNR-27" target="_blank" className="inline-flex items-center gap-2 text-[#213BF6] font-semibold hover:underline">
               Voir plus sur GitHub <ExternalLink size={16} />
             </a>
           </div>
@@ -362,14 +362,14 @@ const staggerContainer: Variants = {
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center relative z-10">
             <a 
-              href="mailto:contact@angelo.dev" 
+              href="mailto:rabetsimbaangelo@gmail.com" 
               className="flex items-center justify-center gap-2 bg-white text-[#213BF6] px-8 py-4 rounded-xl font-bold hover:bg-gray-100 transition shadow-lg"
             >
               <Mail size={20} />
               m'envoyer un email
             </a>
             <a 
-              href="https://linkedin.com" 
+              href="www.linkedin.com/in/angelo-rabetsimba-079ba427b" 
               target="_blank"
               className="flex items-center justify-center gap-2 border border-white/30 bg-white/10 text-white px-8 py-4 rounded-xl font-bold hover:bg-white/20 transition backdrop-blur-sm"
             >
