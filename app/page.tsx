@@ -389,9 +389,9 @@ const staggerContainer: Variants = {
             <p className="text-sm text-gray-500 mt-2">© 2026 Tous droits réservés.</p>
           </div>
           <div className="flex gap-6">
-            <a href="#" className="text-gray-500 hover:text-[#213BF6] transition"><Github size={24} /></a>
-            <a href="#" className="text-gray-500 hover:text-[#213BF6] transition"><Linkedin size={24} /></a>
-            <a href="#" className="text-gray-500 hover:text-[#213BF6] transition"><Mail size={24} /></a>
+            <a href="https://github.com/AngeloNR-27" className="text-gray-500 hover:text-[#213BF6] transition"><Github size={24} /></a>
+            <a href="https://www.linkedin.com/in/angelo-rabetsimba-079ba427b/" className="text-gray-500 hover:text-[#213BF6] transition"><Linkedin size={24} /></a>
+            <a href="mailto:rabetsimbaangelo@gmail.com"  className="text-gray-500 hover:text-[#213BF6] transition"><Mail size={24} /></a>
           </div>
         </div>
       </footer>
