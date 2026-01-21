@@ -2,7 +2,9 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+// import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, Variants } from "framer-motion";
+
 import { 
   Github, 
   Linkedin, 
@@ -56,20 +58,43 @@ export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   // Variants pour les animations
-  const fadeInUp = {
-    hidden: { opacity: 0, y: 40 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
-  };
+  const fadeInUp: Variants = {
+  hidden: { opacity: 0, y: 40 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: [0.16, 1, 0.3, 1], 
+    },
+  },
+};
 
-  const staggerContainer = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2
-      }
-    }
-  };
+const staggerContainer: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2,
+    },
+  },
+};
+
+
+  // const fadeInUp = {
+  //   hidden: { opacity: 0, y: 40 },
+  //   visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
+  // };
+
+  // const staggerContainer = {
+  //   hidden: { opacity: 0 },
+  //   visible: {
+  //     opacity: 1,
+  //     transition: {
+  //       staggerChildren: 0.2
+  //     }
+  //   }
+  // };
 
   return (
     <main className="min-h-screen bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-100 font-sans overflow-x-hidden selection:bg-[#213BF6] selection:text-white">
